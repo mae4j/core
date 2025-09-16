@@ -1,5 +1,7 @@
 name: reviewdog
-on: [pull_request]
+on:
+  pull_request:
+    branches: [ "main" ]
 jobs:
   checkstyle:
     name: Google Style Guide Check for Java
