@@ -1,0 +1,15 @@
+name: reviewdog
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  checkstyle:
+    name: Google Style Guide Check for Java
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dbelyaev/action-checkstyle@v2
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          level: warning
